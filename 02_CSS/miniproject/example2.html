@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP 100</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .filter-box {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #eee;
+            border-radius: 5px;
+        }
+
+        .filter-box input, .filter-box select, .filter-box button {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .product .rank {
+            background: blue;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            width: 40px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product .title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .product .price {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">TOP 100</div>
+        
+        <div class="filter-box">
+            <select>
+                <option>카테고리</option>
+            </select>
+            <select>
+                <option>브랜드</option>
+            </select>
+            <input type="text" placeholder="가격 검색">
+            <button>적용</button>
+        </div>
+
+        <div class="product-grid">
+            <div class="product">
+                <div class="rank">1위</div>
+                <img src="https://via.placeholder.com/250" alt="상품1">
+                <div class="title">[멤버십 전용] 우리집 삼남매 프리미엄 배변패드</div>
+                <div class="price">7,900원</div>
+            </div>
+            <div class="product">
+                <div class="rank">2위</div>
+                <img src="https://via.placeholder.com/250" alt="상품2">
+                <div class="title">[멤버십전용] 뜨거운 커피 교환권</div>
+                <div class="price">3,600원</div>
+            </div>
+            <div class="product">
+                <div class="rank">3위</div>
+                <img src="https://via.placeholder.com/250" alt="상품3">
+                <div class="title">에프원 주식 캔 닭고기 간식</div>
+                <div class="price">900원</div>
+            </div>
+            <div class="product">
+                <div class="rank">4위</div>
+                <img src="https://via.placeholder.com/250" alt="상품4">
+                <div class="title">치석제거 간식</div>
+                <div class="price">5,750원</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

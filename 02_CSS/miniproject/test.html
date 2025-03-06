@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PEO:PET 클론</title>
+    <!-- <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f8f8f8;
+      }
+
+      .container {
+        max-width: 1200px;
+        /* margin: auto; */
+        background: white;
+
+        width: 100%;
+        margin: 0;
+      }
+
+      .logo {
+        text-align: center;
+        padding: 20px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 15px;
+        background: #eee;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .filter-box {
+        padding: 20px;
+        background: #eee;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .filter-box select,
+      .filter-box input,
+      .filter-box button {
+        padding: 8px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .product {
+        background: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .product img {
+        width: 100%;
+        border-radius: 5px;
+      }
+
+      .rank {
+        background: blue;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        width: 40px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .title {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .price {
+        color: red;
+        font-weight: bold;
+      }
+
+      /* 레이아웃 추가 설정 */
+      .container {
+        width: 100%;
+        margin: 0;
+      }
+      .nav,
+      .filter-box {
+        width: 100%;
+      }
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        width: 100%;
+      }
+      .product img {
+        width: 100%;
+        height: auto;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style> -->
+    <link rel="stylesheet" href="test.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">PEO:PET</div>
+      <div class="nav">
+        <div>멤버십</div>
+        <div>BEST</div>
+        <div>전체</div>
+        <div>신상품</div>
+        <div>사료</div>
+        <div>간식</div>
+        <div>용품</div>
+      </div>
+
+      <div class="filter-box">
+        <select>
+          <option>카테고리</option>
+        </select>
+        <select>
+          <option>브랜드</option>
+        </select>
+        <input type="text" placeholder="가격 검색" />
+        <button>적용</button>
+      </div>
+
+      <div class="product-grid">
+        <div class="product">
+          <div class="rank">1위</div>
+          <img src="https://via.placeholder.com/250" alt="상품1" />
+          <div class="title">프리미엄 배변패드</div>
+          <div class="price">7,900원</div>
+        </div>
+        <div class="product">
+          <div class="rank">2위</div>
+          <img src="https://via.placeholder.com/250" alt="상품2" />
+          <div class="title">뜨거운 커피 교환권</div>
+          <div class="price">3,600원</div>
+        </div>
+        <div class="product">
+          <div class="rank">3위</div>
+          <img src="https://via.placeholder.com/250" alt="상품3" />
+          <div class="title">주식 캔 닭고기 간식</div>
+          <div class="price">900원</div>
+        </div>
+        <div class="product">
+          <div class="rank">4위</div>
+          <img src="https://via.placeholder.com/250" alt="상품4" />
+          <div class="title">치석제거 간식</div>
+          <div class="price">5,750원</div>
+        </div>
+      </div>
+
+      <div class="product-grid">
+        <div class="product">
+          <div class="rank">5위</div>
+          <img src="https://via.placeholder.com/250" alt="상품5" />
+          <div class="title">강아지 껌</div>
+          <div class="price">6,500원</div>
+        </div>
+        <div class="product">
+          <div class="rank">6위</div>
+          <img src="https://via.placeholder.com/250" alt="상품6" />
+          <div class="title">닭고기 스틱</div>
+          <div class="price">4,200원</div>
+        </div>
+        <div class="product">
+          <div class="rank">7위</div>
+          <img src="https://via.placeholder.com/250" alt="상품7" />
+          <div class="title">고구마 간식</div>
+          <div class="price">3,800원</div>
+        </div>
+        <div class="product">
+          <div class="rank">8위</div>
+          <img src="https://via.placeholder.com/250" alt="상품8" />
+          <div class="title">건조 연어 간식</div>
+          <div class="price">9,500원</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

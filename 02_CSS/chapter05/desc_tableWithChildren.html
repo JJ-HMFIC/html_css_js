@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* tbody 자동 삽입 되기 때문에 후손 선택자로 설정해야함 */
+        table tr > th{
+            color: red;
+        }
+        tr:hover{
+           background-color: blue; 
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <!-- tbody 자동 삽입 -->
+        <tr>
+            <th>이름</th>
+            <th>지역</th>
+        </tr>
+        <tr>
+            <td>윤인성</td>
+            <td>서울특별시 강서구 내발산동</td>
+        </tr>
+        <tr>
+            <th>이름</th>
+            <th>지역</th>
+        </tr>
+        <tr>
+            <td>윤인성</td>
+            <td>서울특별시 강서구 내발산동</td>
+        </tr>      <tr>
+            <th>이름</th>
+            <th>지역</th>
+        </tr>
+        <tr>
+            <td>윤인성</td>
+            <td>서울특별시 강서구 내발산동</td>
+        </tr>
+    </table>
+</body>
+</html>
