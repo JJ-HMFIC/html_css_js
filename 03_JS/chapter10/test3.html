@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        // 문서 객체를 선택합니다.
+        let button = document.getElementById("checkBalanceBtn");
+
+        button.addEventListener("click", () => {
+          // 10만 원에서 100만 원 사이의 랜덤 숫자 생성
+          let randomBalance =
+            Math.floor(Math.random() * (1000000 - 100000 + 1)) + 100000;
+
+          // 숫자를 천 단위 콤마로 포맷
+          let formattedBalance = randomBalance.toLocaleString();
+
+          // 잔액 표시 업데이트
+          document.getElementById(
+            "balanceDisplay"
+          ).textContent = `잔액: ${formattedBalance} 원`;
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <button id="checkBalanceBtn">잔액 조회</button>
+    <p id="balanceDisplay">잔액: ? 원</p>
+  </body>
+</html>
