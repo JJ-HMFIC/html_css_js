@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      pokedex = [];
+      function addPokemon(name, type, num) {
+        dogam = { name: name, type: type, level: num };
+        for (let i = 0; i < pokedex.length; i++) {
+          if (num == pokedex[i].level) {
+            console.log(`${name}은(는) 이미 등록된 포켓몬입니다.`);
+            return;
+          }
+        }
+        console.log(`${name}이(가) 도감에 등록되었습니다!`);
+        pokedex.push(dogam);
+      }
+
+      addPokemon("뮤츠", "에스퍼", 70);
+      addPokemon("망나뇽", "드래곤", 55);
+      addPokemon("망나뇽", "드래곤", 55);
+
+      console.log(pokedex);
+    </script>
+  </head>
+  <body></body>
+</html>

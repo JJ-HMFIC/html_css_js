@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    let pokedex = [
+      { name: "피카츄", type: "전기", level: 15 },
+      { name: "꼬부기", type: "물", level: 10 },
+      { name: "파이리", type: "불", level: 12 },
+      { name: "이상해씨", type: "풀", level: 8 },
+    ];
+    function findPokemon(pokemon) {
+        let cnt = 0;
+      for (let i = 0; i < pokedex.length; i++) {
+        if (pokedex[i].name == pokemon) {
+          console.log(
+            `${pokedex[i].name} - 타입 : ${pokedex[i].type}, 레벨: ${pokedex[i].level}`
+          );
+          cnt = 1;
+          break;
+        }
+      }
+      if(cnt ==0) console.log("도감에 없는 포켓몬입니다.\n");
+    }
+
+    findPokemon("파이리");
+    findPokemon("뮤츠");
+  </script>
+  <body></body>
+</html>

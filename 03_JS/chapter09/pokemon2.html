@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function findRandomPokemon() {
+        let pokemons = [
+          "피카츄",
+          "파이리",
+          "꼬부기",
+          "이상해씨",
+          "뮤츠",
+          "리자몽",
+        ];
+        let index = Math.floor(Math.random() * (5 - 0 + 1) + 0);
+        console.log(index);
+        // Math.random() * (6 - 0) + 0 >> max 미포함 min 포함 난수 생성
+        return `야생의 ${pokemons[index]}가 나타났다!`; // 포매팅시 백틱(`)만 가능, 캐샵키
+      }
+      console.log(findRandomPokemon());
+      console.log(findRandomPokemon());
+      console.log(findRandomPokemon());
+      console.log(findRandomPokemon());
+    </script>
+  </head>
+  <body></body>
+</html>
