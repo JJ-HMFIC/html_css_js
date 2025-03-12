@@ -14,20 +14,13 @@ function isTopMenu(menu, totalOrders) {
   if(max === (totalOrders[menu])) return '예!';
   else return '아니오!';
   }
-function processOrder(order){
-    return new Promise((resolve)=>{
-        setTimeout(()=>{
-            
-            resolve();
-        },1000)
-    })
-}
+
 function processOrder(order) {
   
     return new Promise((resolve) => {
       setTimeout(() => {
       if(order.quantity>=3){
-        console.log(`✅ ${order.menu} ${order.quantity}인분 주문 처리 완료!`);
+        console.log(`✅ ${order.menu} ${order.quantity}인분 주문 완료!`);
       }
       else{
         console.log(`❌ ${order.menu} ${order.quantity}인분은 주문 최소 수량 미달입니다.`);

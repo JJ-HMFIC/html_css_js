@@ -5,7 +5,7 @@
 // import { orderStatus,updateStatus } from "./status.js"; 5
 // import orders from "./orderList.js"; 6
 // import { isTopMenu as isTop,calculateTotal as calc } from "./orderProcessor.js"; 6
-// import { processOrder } from "./orderProcessor";
+// import { processOrder } from "./orderProcessor.js"; 7
 
 // let find = "삼겹살";
 //------------------------------------1번번------------------------------------------------------
@@ -62,7 +62,18 @@
 // console.log("✅ 총 주문 수량: "+ JSON.stringify(tmp));
 // console.log('🥩 삼겹살이 가장 인기 메뉴인가요? '+ `${isTop('삼겹살',tmp)}`);
 //--------------------------------------7번----------------------------------------------------
-
+const orders = [
+    { menu: "삼겹살", quantity: 2 },
+    { menu: "소고기", quantity: 3 },
+    { menu: "닭갈비", quantity: 1 },
+    { menu: "항정살", quantity: 4 }
+]
+async function processAllOrders(orders) {
+    for(let order of orders){
+        await processOrder(order);
+    }
+}
+processAllOrders(orders);
 
 
 
