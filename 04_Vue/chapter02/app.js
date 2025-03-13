@@ -6,6 +6,10 @@
 // import orders from "./orderList.js"; 6
 // import { isTopMenu as isTop,calculateTotal as calc } from "./orderProcessor.js"; 6
 // import { processOrder } from "./orderProcessor.js"; 7
+// import { getReservation } from "./reservation.js"; 8
+// import menu from "./menu.js";  9
+// import { filterMenuByPrice } from "./menuFilter.js"; 9
+import { calculateDiscount as discount } from "./discount.js";
 
 // let find = "삼겹살";
 //------------------------------------1번번------------------------------------------------------
@@ -62,18 +66,33 @@
 // console.log("✅ 총 주문 수량: "+ JSON.stringify(tmp));
 // console.log('🥩 삼겹살이 가장 인기 메뉴인가요? '+ `${isTop('삼겹살',tmp)}`);
 //--------------------------------------7번----------------------------------------------------
-const orders = [
-    { menu: "삼겹살", quantity: 2 },
-    { menu: "소고기", quantity: 3 },
-    { menu: "닭갈비", quantity: 1 },
-    { menu: "항정살", quantity: 4 }
-]
-async function processAllOrders(orders) {
-    for(let order of orders){
-        await processOrder(order);
-    }
-}
-processAllOrders(orders);
+// const orders = [
+//     { menu: "삼겹살", quantity: 2 },
+//     { menu: "소고기", quantity: 3 },
+//     { menu: "닭갈비", quantity: 1 },
+//     { menu: "항정살", quantity: 4 }
+// ]
+// async function processAllOrders(orders) {
+//     for(let order of orders){
+//         await processOrder(order);
+//     }
+// }
+// processAllOrders(orders);
+//--------------------------------------8번----------------------------------------------------
+// let people = 4;
+// console.log(people+ ": " + getReservation(people));
 
+//--------------------------------------9번----------------------------------------------------
+// let price= 18000;
+// async function showAffordableMenu(menu,price) {
+//     let result = await filterMenuByPrice(menu,price);
+//     console.log('✅ 선택 가능한 메뉴:');
 
-
+//     for(let tmp of result){
+//         console.log(`${tmp.name}: ${tmp.price}원`)
+//     }
+// }
+// showAffordableMenu(menu,price);
+//--------------------------------------10번----------------------------------------------------
+let result =  discount(15000,5);
+console.log(`✅ 최종 결제 금액: ${result}원`);
