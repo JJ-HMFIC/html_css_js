@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>추천 고백 장소</h2>
+      <ul>
+        <li v-for="(place, index) in arr" :key="index">
+          {{index+1}}. {{place}}
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let arr = ["한강공원", "루프탑 카페", "바닷가", "놀이공원", "분수광장"];
+      arr = arr.slice(0, 3);
+      let vm = Vue.createApp({
+        name: "App",
+        data() {
+          return { arr };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

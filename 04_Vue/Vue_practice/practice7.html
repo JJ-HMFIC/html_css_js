@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      <textarea
+        v-model="message"
+        placeholder="편지를 작성하세요..."
+        @input="changeName"
+        style="width: 300px; height: 200px;"
+      ></textarea>
+      <br />
+      현재 글자 수: {{message.length}}
+      <br />
+      <span v-if="message.length <100"
+        >등급: D - 아직 시작 단계예요. 천천히 적어봐요!</span
+      >
+      <span v-else-if="message.length <200"
+        >등급: C - 좋아요! 이제 리듬을 타고 있어요.</span
+      >
+      <span v-else-if="message.length <300"
+        >등급: B - 속도 좋습니다! 감정을 더 담아보세요.</span
+      >
+      <span v-else-if="message.length <400"
+        >등급: A - 멋져요! 충분히 마음이 담기고 있어요.</span
+      >
+      <span v-else="message.length"
+        >등급: S - 폭풍 같은 집중력! 감동의 편지가 될 거예요.</span
+      >
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: "App",
+        data() {
+          return { message: "" };
+        },
+        methods: {
+          changeName(e) {
+            this.message = e.target.value;
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

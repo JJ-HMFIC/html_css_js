@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model="num" />
+      <br />
+      <span v-if="num >= 200 && num<500">
+        반가워요</span
+      >
+      <span v-else-if="num >= 500 && num<1000">
+       잘있어요
+      </span>
+      <span v-else-if="num >= 1000">다시 만나요 </span>
+      <span v-else>안녕하세요</span>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: "App",
+        data() {
+          return { num: 0 };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
