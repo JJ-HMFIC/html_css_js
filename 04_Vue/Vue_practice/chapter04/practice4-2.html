@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      <button
+        :class="{ selected: selectedWand === '엘더 지팡이' }"
+        @click="selectWand('엘더 지팡이')"
+      >
+        엘더 지팡이
+      </button>
+      <button
+        :class="{ selected: selectedWand === '단풍 지팡이' }"
+        @click="selectWand('단풍 지팡이')"
+      >
+        단풍 지팡이
+      </button>
+      <button
+        :class="{ selected: selectedWand === '벗나무 지팡이' }"
+        @click="selectWand('벗나무 지팡이')"
+      >
+        벗나무 지팡이
+      </button>
+      <button @click="resetWand">지팡이 초기화</button>
+      <div class="message" :class="{ warning: isWarning }">{{ message }}</div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: "App",
+        data() {
+          return {
+            selectedWand: "", // 선택된 지팡이
+            message: "", // 표시할 메시지
+            // isWarning: false, // 경고 여부
+          };
+        },
+        methods: {
+          selectWand(wand) {
+            
+              if (this.selectedWand !== wand) {
+                this.message = `당신은 ${wand}를 선택했습니다!`;
+                // this.isWarning = true;
+                this.selectedWand = wand;
+              }
+              else if(this.selectedWand ===  wand){
+                this.message = `이미 ${wand}를 선택했습니다. 다른 지팡이를 선택하세요!`;
+              }
+            
+          },
+          resetWand() {
+            this.selectedWand = "";
+            this.message = "지팡이를 다시 선택해주세요.";
+            this.isWarning = false;
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

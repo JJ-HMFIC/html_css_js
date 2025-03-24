@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      이름 : <input type="text" v-model="name" />
+      <br />
+      나이 : <input type="text" v-model.number="age" />
+      <br />
+      <button @click="tmp">입학 승인</button>
+      <br>
+      <span v-if="message !== ''" style="white-space: pre-line"
+        >{{ message }}</span
+      >
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: "App",
+        data() {
+          return { name: "", age: "", message: "" };
+        },
+        methods: {
+          tmp() {
+            this.message = ""; // 초기화
+
+            // 이름 유효성 검사
+            if (this.name.length < 2) {
+              this.message += "이름은 2글자 이상을 입력해주세요.";
+            }
+            if (this.name.match(/\d/) !== null) {
+              if (this.message) this.message += "\n";
+              this.message += "이름에는 숫자를 포함할 수 없습니다.";
+            }
+
+            // 나이 유효성 검사
+            if (this.age < 11 || this.age > 18) {
+              if (this.message) this.message += "\n";
+              this.message += "나이는 11세 이상 18세 이하로 입력해주세요.";
+            }
+
+            // 모든 조건이 통과되었을 때
+            if (this.message === "") {
+              this.message = `${this.name}, ${this.age}세, 호그와트 입학을 축하합니다!`;
+            }
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
