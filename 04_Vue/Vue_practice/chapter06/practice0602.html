@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      .red-border {
+        border: 3px solid red;
+      }
+      .orange-border {
+        border: 3px solid orange;
+      }
+      .green-border {
+        border: 3px solid green;
+      }
+      .red-text {
+        color: red;
+        font-size: 14px;
+      }
+      .orange-text {
+        color: orange;
+        font-size: 16px;
+      }
+      .green-text {
+        color: green;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .icon-red {
+        color: red;
+      }
+      .icon-orange {
+        color: orange;
+      }
+      .icon-green {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" class="container-mt-5">
+      <h2 class="text-center-mb-4">세종대 맛집 리뷰 입력</h2>
+      <div class="mb-3">
+        <textarea
+          v-model="review"
+          class="form-control"
+          rows="4"
+          :class="borderClass"
+          placeholder="리뷰를 작성해주세요 ..."
+        ></textarea>
+      </div>
+      <div class="alert" :class="textClass">
+        <i :class="iconClass"></i> {{feedbackMessage}}
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: "App",
+        data() {
+          return {
+            review: "",
+          };
+        },
+        computed: {
+          textClass() {
+            let tmp = this.review.length;
+            if (tmp <= 20) return "red-text";
+            if (tmp <= 50) return "orange-text";
+            return "green-text";
+          },
+          borderClass() {
+            let tmp = this.review.length;
+            if (tmp <= 20) return "red-border";
+            if (tmp <= 50) return "orange-border";
+            return "green-border";
+          },
+          iconClass() {
+            const length = this.review.length;
+            if (length <= 20) return "fa fa-exclamation-circle icon-red";
+            if (length <= 50) return "fa fa-star icon-orange";
+            return "fa fa-trophy icon-green";
+          },
+          feedbackMessage() {
+            const length = this.review.length;
+            if (length <= 20) return "조금 더 작성해주세요!";
+            if (length <= 50) return "좋은 리뷰입니다!";
+            return "훌륭한 리뷰에요!";
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

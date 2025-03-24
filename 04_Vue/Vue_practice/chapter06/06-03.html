@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Framework</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- backgroundColor와 color 속석을 따로 객체로 묶어서 가져옴 -->
+      <!-- {backgroundColor,color} => {backgroudColor : backgroundColor, color : color} -->
+      <button
+        :style="{backgroundColor,color}"
+        @mouseover.stop="overEvent"
+        @mouseout.stop="outEvent"
+      >
+        테스트
+      </button>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      const vm = Vue.createApp({
+        name: "App",
+        data() {
+          return {
+            backgroundColor: "aqua",
+            color: "black",
+          };
+        },
+
+        methods: {
+          overEvent() {
+            this.backgroundColor = "purple";
+            this.color = "yellow";
+          },
+          outEvent() {
+            this.color = "black";
+            this.backgroundColor = "aqua";
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
